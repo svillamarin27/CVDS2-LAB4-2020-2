@@ -1,8 +1,9 @@
 package hangman.model;
 
 public class BonusScore implements GameScore{
+	private int score;
 	public BonusScore() {
-		
+		this.score=0;
 	}
 	/**
 	@pre El juego se inicia en 0 puntos

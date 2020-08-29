@@ -1,8 +1,9 @@
 package hangman.model;
 
 public class OriginalScore implements GameScore {
+	private int score;
 	public OriginalScore(){
-		
+		this.score=100;
 	}
 	/**
 	 * @pre Es el esquema actual, se inicia con 100 puntos.

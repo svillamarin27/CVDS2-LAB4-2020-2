@@ -1,12 +1,13 @@
 package hangman.model;
 
 public class PowerScore implements GameScore {
+	private int score;
 	public PowerScore() {
-		
+		this.score=0;
 	}
 	/**
 	@pre El juego se inicia en 0 puntos
-	@pos El resultado al terminar el juego se penaliza con 8 puntos cada letra errada y La $i-ésima$ letra correcta se bonifica con $5^i$ 
+	@pos El resultado al terminar el juego se penaliza con 8 puntos cada letra errada y La $i-ï¿½sima$ letra correcta se bonifica con $5^i$ 
 	@param int correctCount 
 	@param int incorrectCount
 	@throws El puntaje minimo es 0
