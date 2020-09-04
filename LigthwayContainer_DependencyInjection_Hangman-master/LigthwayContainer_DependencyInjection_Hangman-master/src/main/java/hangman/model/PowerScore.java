@@ -14,9 +14,22 @@ public class PowerScore implements GameScore {
 	@throws Si con las reglas anteriores sobrepasa 500 puntos, el puntaje es 500.
 	**/
 	@Override
-	public int calculateScore(int correctCount, int incorrectCount) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+	public int calculateScore(int correctCount, int incorrectCount)throws modelException{
+        if(correctCount <0 || incorrectCount <0 ){
+            throw new modelException("Parametros Invalidos.");
+        }
+        int respuesta = 0;
+        for(int i=0; i<correctCount;i++){
+            respuesta += Math.pow(5,i+1);
+        }
+        respuesta -= incorrectCount*8;
+        if (respuesta < 0){
+            respuesta = 0;
+        }else if(respuesta > 500){
+            respuesta = 500;
+        }
+        return respuesta;
+    }
+	
 
 }

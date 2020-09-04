@@ -10,12 +10,20 @@ public class BonusScore implements GameScore{
 	@pos El resultado al terminar el juego se bonifica con 10 puntos cada letra correcta y se penaliza con 5 puntos cada letra incorrecta
 	@param int correctCount 
 	@param int incorrectCount
-	@throws El puntaje minimo es menor que 0 
+	@throws El score minimo es menor que 0 
 	**/
 	@Override
-	public int calculateScore(int correctCount, int incorrectCount) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+	public int calculateScore(int correctCount, int incorrectCount) throws modelException{
+		if(correctCount <0 || incorrectCount <0 ){
+            throw new modelException("Parametros Invalidos.");
+        }
+        int respuesta = 0;
+        int score = 0;
+        respuesta = score - (incorrectCount*5) + (correctCount*10);
+        if (respuesta < 0){
+            respuesta = 0;
+        }
+        return respuesta;
+    }
 
 }
