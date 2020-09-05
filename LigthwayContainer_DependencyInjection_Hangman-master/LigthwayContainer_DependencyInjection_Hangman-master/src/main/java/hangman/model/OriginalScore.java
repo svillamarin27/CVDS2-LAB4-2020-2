@@ -17,13 +17,12 @@ public class OriginalScore implements GameScore {
         if(correctCount <0 || incorrectCount <0 ){
             throw new modelException("Parametros Invalidos.");
         }
-        int resp = 0;
-        int score = 100;
-        resp = score - (incorrectCount*10);
-        if (resp < 0){
-            resp = 0;
+        int respuesta = 0;
+        respuesta = score - (incorrectCount*10);
+        if (respuesta < 0){
+            respuesta = 0;
         }
-        return resp;
+        return respuesta;
     }
 
 }

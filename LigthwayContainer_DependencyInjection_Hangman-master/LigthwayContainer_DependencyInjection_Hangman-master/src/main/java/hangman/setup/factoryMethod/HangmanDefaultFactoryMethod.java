@@ -22,4 +22,10 @@ public class HangmanDefaultFactoryMethod extends HangmanFactoryMethod {
     public HangmanPanel createHangmanPanel() {
         return new HangmanStickmanPanel();
     }
+
+	@Override
+	protected void configure() {
+		// TODO Auto-generated method stub
+		
+	}
 }
